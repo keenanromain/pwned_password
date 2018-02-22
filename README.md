@@ -1,6 +1,6 @@
 # pwned_password
 
-Run this script to see if a generated compatible sha-1 of a password has been found in a data breach.<br />
+Run this script to see if a generated sha-1 of a password has been found in a data breach.<br />
 To check if an email account is compromised, go to <a href="https://haveibeenpwned.com/">haveibeenpwned</a> for more info.
 
 
