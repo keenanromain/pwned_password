@@ -3,9 +3,9 @@ require 'io/console'
 require 'net/http'
 require 'uri'
 
-print "Enter password to be searched in the PwnedPasswords.com database: "
+print "Enter hidden password to be searched in the PwnedPasswords.com database: "
 password = STDIN.noecho(&:gets).chomp
-hashedpw = (Digest::SHA1.hexdigest password).upcase
+hashedpw = Digest::SHA1.hexdigest(password).upcase
 
 uri = URI.parse('https://api.pwnedpasswords.com/range/'+hashedpw[0...5])
 response = Net::HTTP.get_response(uri)
@@ -23,4 +23,3 @@ if response.kind_of? Net::HTTPSuccess
 else
     puts "\nOops! Error querying API."
 end
-
