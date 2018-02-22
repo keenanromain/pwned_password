@@ -19,9 +19,7 @@ if response.kind_of? Net::HTTPSuccess
             break
         end
     end
-    if not pwned
-        puts "\nYour password has not been found in the PwnedPasswords.com database"
-    end
+    puts "\nYour password has not been found in the PwnedPasswords.com database" if not pwned
 else
     puts "\nOops! Error querying API."
 end
